@@ -1,0 +1,10 @@
+.container{
+    justify-content: center;
+    align-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ #canvas {
+     border:solid;
+
+ }
