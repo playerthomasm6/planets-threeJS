@@ -54,11 +54,12 @@ html, body {
 
 #title-card {
   position: absolute;
-  left: 45%;
+  left: 0%;
   top: 8%;
   color: white;
   font-weight: bold;
   text-align: center;
   font-size: 3em;
+  width: 100%;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
