@@ -7,20 +7,29 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>3d Planet Viewer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
 <body>
-  
+  <section class="header">
+    <h1>3d Planet Explorer</h1>
+  </section>
+  <main id="planet-viewer-window">
+        <h3 id="title-card">Jupiter</h3>
+
+
+    <button class="button-controls" id="left-button">▲</button>
+    <button class="button-controls" id="right-button">▼</button>
+
+    <button class="button-controls" id="in-button">+</button>
+    <button class="button-controls" id="out-button">-</button>
+  </main>
 
 
 
 
 
-<button id="left-button">Rotate Up</button>
-<button id="right-button">Rotate Down</button>
 
-<button id="in-button">Zoom In</button>
-<button id="out-button">Zoom Out</button>
   <script type="module" src="./three.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="/assets/js/index.js"></script>

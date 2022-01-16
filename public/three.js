@@ -4,11 +4,13 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const barrier = 10;  //Sets value of boundry
-let cameraZoom = 80;
+let cameraZoom = 145;
 
 let starsPlain;
 let sphereJupiter;
 let renderer;
+
+const planetWindow = document.getElementById("planet-viewer-window")
 
 // GEOMETRY BUILDING FUNCTIONS
 
@@ -34,7 +36,7 @@ const initPlanetJupiter = () => {
 const init = () => {
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    planetWindow.appendChild(renderer.domElement);
 
     initPlanetJupiter();
     initStarsBackGround();
@@ -78,6 +80,13 @@ const moveAround = () => {
     }
 }
 
+const addButtons = () => {
+    let zoomInButton = document.createElement("button");
+    zoomInButton.className = "button-controls";
+    zoomInButton.innerText = "Zoom In"
+    planetWindow.appendChild(zoomInButton)
+}
+
 const onWindowResize = () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
@@ -91,7 +100,6 @@ function animate() {
     sphereJupiter.rotation.y += 0.001;
     moveAround();
 }
-
 
 init();
 window.onload = animate();
