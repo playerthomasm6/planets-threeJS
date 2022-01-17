@@ -22,6 +22,10 @@ html, body {
   border: none;
 }
 
+.button-controls:hover {
+  cursor: pointer;
+}
+
 .header {
   font-weight: 700;
   background-color: rgb(18, 0, 78);
@@ -62,4 +66,14 @@ html, body {
   font-size: 3em;
   width: 100%;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 2%;
+  left: 40%;
+  margin: -1px;
+  width: 250px;
+  line-height: 20px;
+  height: 20px;
 }

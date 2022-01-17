@@ -4,7 +4,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const barrier = 10;  //Sets value of boundry
-let cameraZoom = 145;
+let cameraZoom = 100;
 
 let starsPlain;
 let sphereJupiter;
@@ -15,7 +15,7 @@ const planetWindow = document.getElementById("planet-viewer-window")
 // GEOMETRY BUILDING FUNCTIONS
 
 const initStarsBackGround = () => {
-    const geometryplain = new THREE.PlaneGeometry(500, 500);
+    const geometryplain = new THREE.PlaneGeometry(1000, 500);
     const textureplain = new THREE.TextureLoader().load('./assets/images/8k_stars.jpg')
     const materialplain = new THREE.MeshBasicMaterial({ map: textureplain, side: THREE.DoubleSide });
     starsPlain = new THREE.Mesh(geometryplain, materialplain);
@@ -131,4 +131,14 @@ document.getElementById("out-button").addEventListener("click", function () {
     if (cameraZoom >= 200) return
     cameraZoom += 5;
     starsPlain.position.z += 5;
+})
+
+
+let inputRangeZoom = document.getElementById("input-range-zoom");
+let zoomValue;
+
+inputRangeZoom.addEventListener("input", function() {
+    zoomValue = inputRangeZoom.value
+    console.log(zoomValue)
+    cameraZoom = zoomValue;
 })
