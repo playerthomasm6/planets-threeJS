@@ -70,10 +70,10 @@ html, body {
 
 .slider-controls {
   position: absolute;
-  bottom: 2%;
-  left: 40%;
+  bottom: 10%;
+  left: 25%;
   margin: -1px;
-  width: 250px;
+  width: 50%;
   line-height: 20px;
   height: 20px;
 }

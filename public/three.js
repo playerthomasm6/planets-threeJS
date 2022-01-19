@@ -4,7 +4,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const barrier = 10;  //Sets value of boundry
-let cameraZoom = 100;
+let cameraZoom = 200;
 
 let starsPlain;
 let sphereJupiter;
@@ -124,21 +124,60 @@ document.getElementById("right-button").addEventListener("click", function () {
 document.getElementById("in-button").addEventListener("click", function () {
     if (cameraZoom <= 55) return
     cameraZoom -= 5;
+    inputRangeZoom.value = cameraZoom;
     starsPlain.position.z -= 5;
+    console.log(inputRangeZoom.value)
+    console.log(cameraZoom)
 })
 
 document.getElementById("out-button").addEventListener("click", function () {
     if (cameraZoom >= 200) return
     cameraZoom += 5;
+    inputRangeZoom.value = cameraZoom;
     starsPlain.position.z += 5;
+    console.log(inputRangeZoom.value)
+    console.log(cameraZoom)
 })
 
 
 let inputRangeZoom = document.getElementById("input-range-zoom");
 let zoomValue;
 
-inputRangeZoom.addEventListener("input", function() {
+inputRangeZoom.addEventListener("input", function() { //Listener for scale slider
     zoomValue = inputRangeZoom.value
     console.log(zoomValue)
     cameraZoom = zoomValue;
+})
+
+let hideButton = document.getElementById("hide-button")
+
+
+let hidden = false;
+
+let cameraControlButtonGroup = document.querySelector("buttonGroup")
+console.log(cameraControlButtonGroup)
+
+hideButton.addEventListener("click", function() { // Hides main controls
+    if (!hidden) {
+        document.getElementById("left-button").style.display = "none";
+        document.getElementById("right-button").style.display = "none";
+        document.getElementById("in-button").style.display = "none";
+        document.getElementById("out-button").style.display = "none";
+        document.getElementById("input-range-zoom").style.display = "none";
+        document.getElementById("title-card").style.display = "none";
+        hidden = true
+    }
+    else if (hidden) {
+        document.getElementById("left-button").style.display = "";
+        document.getElementById("right-button").style.display = "";
+        document.getElementById("in-button").style.display = "";
+        document.getElementById("out-button").style.display = "";
+        document.getElementById("input-range-zoom").style.display = "";
+        document.getElementById("title-card").style.display = "";
+        hidden = false
+    } else {
+        console.log("For some fucking reason it is not grabbing the element from the page")
+    }
+    
+
 })
